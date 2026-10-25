@@ -65,7 +65,7 @@ export const createCheckoutSession = async (userEmail: string, plan: string) => 
 
     // Create a checkout session in Stripe
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ["card"],
+      allowed_payment_method_types: ["card"],
       mode: "subscription",
       line_items: [
         {
